@@ -1,5 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
+
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -22,10 +24,12 @@ export default function Home() {
         </p>
 
         <div className={styles.grid}>
-          <a href="/map" className={styles.card}>
-            <h2>Hypixel - Diana map &rarr;</h2>
-            <p>View your current griffin burrows on a map!</p>
-          </a>
+          <Link href="/map" >
+            <div className={styles.card}>
+              <h2>Hypixel - Diana map &rarr;</h2>
+              <p>View your current griffin burrows on a map!</p>
+            </div>
+          </Link>
 
           {/* <a href="https://nextjs.org/learn" className={styles.card}>
             <h2>Learn &rarr;</h2>
