@@ -6,7 +6,7 @@ import stylesMap from '/styles/Map.module.css'
 
 import { getBurrows } from '/pages/api/map/burrows.js';
 
-function profile({ points }) {
+function Profile({ points }) {
 // export default function player({ player }) {
     // const router = useRouter();
     // const result = router.query;

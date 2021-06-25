@@ -5,7 +5,7 @@ import Select from 'react-select'
 
 import { getPlayer } from '/pages/api/map/player.js';
 
-function player({ player }) {
+function Player({ player }) {
     const router = useRouter();
     const { playerName } = router.query;
 
