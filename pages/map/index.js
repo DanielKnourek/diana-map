@@ -1,24 +1,29 @@
 import Image from 'next/image'
+import { useState } from 'react'
 import hub_map from '../../public/hub_map.jpeg'
 import styles from '../../styles/Home.module.css'
 import stylesMap from '../../styles/Map.module.css'
 
 
 export default function Map({points}){
+    const [playerName, setPlayerName] =  useState("Kdandikk")
     return (
 
     <div className={styles.container}>
-        <h1>Map of my burrows</h1>
+        <h1>Map of Kdandikk burrows</h1>
         <div className={stylesMap.container}>
             <Image src={hub_map} alt="Map of hub" width={500} height={500} layout="responsive"/>
             {drawCircles(points)}
+        </div>
+        <div>
+            <p>Go to your profile:</p>
+            <input type="text" onChange={(e) => (setPlayerName(e.target.value))} placeholder="Your nickname"></input>
+            <a href={`map/${playerName}`}><button>GO!</button></a>
         </div>
         <p> Created by Daniel Kňourek | 2021 </p>
     </div>
     )
 }
-
-let me = "Hello world! :)"
 
 async function getCords(){
     const api_link = "https://api.hypixel.net" 
