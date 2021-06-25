@@ -25,7 +25,7 @@ return (
     <>
     <Head>
         <title>Diana map</title>
-        <meta http-equiv="refresh" content="10" key="refresher"/>
+        <meta httpEquiv="refresh" content="10" key="refresher"/>
     </Head>
     <div className={styles.container}>
         <h1>Map of my burrows</h1>
