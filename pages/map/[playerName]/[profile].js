@@ -1,8 +1,10 @@
 import { useRouter } from 'next/router';
+
 import Image from 'next/image'
 import hub_map from '/public/hub_map.jpeg'
 import styles from '/styles/Home.module.css'
 import stylesMap from '/styles/Map.module.css'
+import Head from 'next/head'
 
 import { getBurrows } from '/pages/api/map/burrows.js';
 
@@ -20,6 +22,11 @@ function Profile({ points }) {
     // </>)
 
 return (
+    <>
+    <Head>
+        <title>Diana map</title>
+        <meta http-equiv="refresh" content="10" key="refresher"/>
+    </Head>
     <div className={styles.container}>
         <h1>Map of my burrows</h1>
         <div className={stylesMap.container}>
@@ -28,6 +35,7 @@ return (
         </div>
         <p> Created by Daniel Kňourek | 2021 </p>
     </div>
+    </>
     )
 }
 
@@ -76,7 +84,7 @@ function calculateCoords(point, size){
     return position
 }
 function drawCircles(points){
-        console.log(points);
+        // console.log(points);
 
     let elements = new Array();
     for (const pointIndex in points.burrows) {
@@ -87,6 +95,7 @@ function drawCircles(points){
 }
 function drawCircle(id, point){
     // console.log(point)
+    let colors = [stylesMap.level1, stylesMap.level2, stylesMap.level3, stylesMap.level4];
 
     // let point = {x : -3, y : 70, z : -66}; //center
     // let point = {x : -8, y : 86, z : -15}; // flower
@@ -95,7 +104,7 @@ function drawCircle(id, point){
     let position = calculateCoords(point, {x: 1000, z: 1000});
     // console.log(position)
     return (
-        <div key={id} className={stylesMap.point} style={{top: position.z-5+"px", left: position.x-5+"px"}}></div>
+        <div key={id} className={[stylesMap.point, colors[point.chain]].join(" ")} style={{top: position.z-5+"px", left: position.x-5+"px"}}></div>
     )
 }
 

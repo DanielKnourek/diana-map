@@ -7,11 +7,27 @@
 }
 
 .point{
-    width: 10px;
-    height: 10px;
+    width: 14px;
+    height: 14px;
     background-color: red;
     border-radius: 100%;
     position: absolute;
+    border-width: 2px;
+    border-color: black;
+    border-style: solid;
     /* left: 100px; */
     /* top: 100px; */
+}
+
+.level4{    
+    background-color: 	rgb(204, 51, 51);
+}
+.level3{    
+    background-color: 	rgb(204, 128, 51);
+}
+.level2{    
+    background-color: 	rgb(204, 204, 51);
+}
+.level1{    
+    background-color: 	rgb(51, 204, 51);
 }
