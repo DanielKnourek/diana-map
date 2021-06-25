@@ -44,7 +44,7 @@ function Player({ player }) {
 export async function getServerSideProps({ params }){
 
     // player = await fetch(`http://localhost:3000/api/map/player?name=${params.playerName}`).then(r => r.json())
-    player = await getPlayer({name: params.playerName})
+    let player = await getPlayer({name: params.playerName})
 
 
     return {
@@ -52,7 +52,7 @@ export async function getServerSideProps({ params }){
     }
 }
 
-export default player;
+export default Player;
 
 // export async function getStaticProps({ params }){
     

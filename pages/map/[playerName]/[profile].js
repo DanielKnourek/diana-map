@@ -139,4 +139,4 @@ export async function getServerSideProps({ params }){
     }
 }
 
-export default profile;
+export default Profile;
