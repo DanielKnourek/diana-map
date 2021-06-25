@@ -1,5 +1,8 @@
-import Image from 'next/image'
 import { useState } from 'react'
+
+import Image from 'next/image'
+import Link from 'next/link'
+
 import hub_map from '../../public/hub_map.jpeg'
 import styles from '../../styles/Home.module.css'
 import stylesMap from '../../styles/Map.module.css'
@@ -18,7 +21,9 @@ export default function Map({points}){
         <div>
             <p>Go to your profile:</p>
             <input type="text" onChange={(e) => (setPlayerName(e.target.value))} placeholder="Your nickname"></input>
-            <a href={`map/${playerName}`}><button>GO!</button></a>
+            <Link href={`map/${playerName}`}>
+                <button>GO!</button>
+            </Link>
         </div>
         <p> Created by Daniel Kňourek | 2021 </p>
     </div>
